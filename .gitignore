@@ -1,0 +1,7 @@
+.vs/
+.git/
+**/bin/
+**/Debug/
+**/Release/
+**/obj/
+**/packages/
