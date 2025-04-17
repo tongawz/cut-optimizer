@@ -16,7 +16,7 @@ optimizer.AddPanel(panelx: 80, panely: 100, "J");
 //optimizer.AddPanel(panelx: 100, panely: 35, "K");
 
 
-var panels = optimizer.OptimizePanels(rotate: true);
+var panels = optimizer.OptimizePanels(rotate: false);
 
 var imgPath = @"C:\Users\gsosa\Desktop\Dev\cut-optimizer";
 var dateString = DateTime.Now.ToString("yyyyMMddhhmmss");
@@ -27,7 +27,8 @@ foreach (var panel in panels)
     panel,
     Path.Combine(imgPath, dateString + $"_{panel.Index}.png"),
     dpi: 1000,
-    marginPx: 20,
+    marginBottom: 20,
+    marginRight: 20,
     scale: 5f,
     panelFontSize: 7f,
     tableFontSize: 6.5f);
