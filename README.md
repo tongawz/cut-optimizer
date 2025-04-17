@@ -1,6 +1,4 @@
----
-
-### ℹ️ Nota sobre la opción "Permitir rotación de paneles"
+## ℹ️ Nota sobre la opción "Permitir rotación de paneles"
 
 Este sistema genera todas las posibles combinaciones de paneles que se pueden ubicar dentro de un panel base, sin exceder su superficie.  
 La cantidad de combinaciones posibles **crece exponencialmente** según dos factores:
@@ -9,8 +7,6 @@ La cantidad de combinaciones posibles **crece exponencialmente** según dos fact
 - Si se permite o no rotar los paneles (90°)
 
 A continuación se presentan las **fórmulas** y un **ejemplo comparativo** entre ambas opciones.
-
----
 
 ## 🔒 Sin rotación
 
