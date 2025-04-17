@@ -81,3 +81,12 @@ Total = (2^6) * (3^5) - 1 = 64 * 243 - 1 = 15.552 - 1 = 15.551 combinaciones
 - **No todos los paneles pueden rotarse**: Si una rotación provoca que el panel exceda el ancho o alto permitido, se **descarta automáticamente**.
 - A medida que aumenta la cantidad de paneles **rotables**, el número de combinaciones posibles crece **mucho más rápido** que en el caso sin rotación.
 - Esto puede implicar un tiempo de procesamiento considerablemente mayor.
+
+
+---
+
+## 🙏 Agradecimientos
+
+Quiero expresar mi sincero agradecimiento a la librería [**RectpackSharp**](https://github.com/ThomasMiz/RectpackSharp) de **ThomasMiz**, que fue fundamental en la implementación del sistema de packing de paneles en este proyecto. Gracias a su excelente trabajo, pude integrar de manera eficiente la solución de packing en el sistema.
+
+Puedes consultar la librería aquí: [RectpackSharp en GitHub](https://github.com/ThomasMiz/RectpackSharp)
