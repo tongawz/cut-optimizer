@@ -1,3 +1,7 @@
+## cut-optimizer
+![20250417013125_1](https://github.com/user-attachments/assets/efe4ac70-3abc-4c80-9911-48f5a89c6ca2)
+> Se trata de una herramienta pensada para optimización de cortes en matrices rectangulares. Para aprovechar al máximo el material disponible. Por ejemplo corte de CNC en carpintería.
+
 ## ℹ️ Nota sobre la opción "Permitir rotación de paneles"
 
 Este sistema genera todas las posibles combinaciones de paneles que se pueden ubicar dentro de un panel base, sin exceder su superficie.  
@@ -77,6 +81,3 @@ Total = (2^6) * (3^5) - 1 = 64 * 243 - 1 = 15.552 - 1 = 15.551 combinaciones
 - **No todos los paneles pueden rotarse**: Si una rotación provoca que el panel exceda el ancho o alto permitido, se **descarta automáticamente**.
 - A medida que aumenta la cantidad de paneles **rotables**, el número de combinaciones posibles crece **mucho más rápido** que en el caso sin rotación.
 - Esto puede implicar un tiempo de procesamiento considerablemente mayor.
-
----
-
