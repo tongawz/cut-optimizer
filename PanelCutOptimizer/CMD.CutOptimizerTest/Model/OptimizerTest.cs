@@ -8,6 +8,6 @@
     public int NotRotatablePanels { get; set; } = 0;
     public int TotalBasePanels { get; set; } = 0;
     public float DurationSeconds { get; set; } = 0;
-    public List<string> CoverStats { get; set; } = new(); 
+    public List<string> CoverStats { get; set; } = []; 
   }
 }

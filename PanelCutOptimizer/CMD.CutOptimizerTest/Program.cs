@@ -1,6 +1,7 @@
 ﻿// See https://aka.ms/new-console-template for more information
 using CMD.CutOptimizerTest.Model;
 using Lib.CutOptimizer;
+using LIB.PanelDrawer;
 using System.Diagnostics;
 
 var random = new Random();
@@ -73,8 +74,8 @@ foreach (var r in tests)
 
 Console.Read();
 
-
-/* Para crear las imagenes
+/*
+// Para crear las imagenes
 var imgPath = @"C:\Users\gsosa\Desktop\Dev\cut-optimizer";
 var dateString = DateTime.Now.ToString("yyyyMMddhhmmss");
 
@@ -91,5 +92,4 @@ foreach (var panel in panels)
     scale: 5f,
     panelFontSize: 7f,
     tableFontSize: 6.5f);
-}
-*/
+}*/

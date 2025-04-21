@@ -9,6 +9,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Lib.CutOptimizer\LIB.CutOptimizer.csproj" />
+    <ProjectReference Include="..\LIB.PanelDrawer\LIB.PanelDrawer.csproj" />
   </ItemGroup>
 
 </Project>

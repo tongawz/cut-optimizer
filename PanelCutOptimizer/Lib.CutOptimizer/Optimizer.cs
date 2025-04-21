@@ -1,4 +1,4 @@
-﻿using LIB.CutOptimizer.Model;
+﻿using LIB.PanelsModel;
 
 namespace Lib.CutOptimizer
 {

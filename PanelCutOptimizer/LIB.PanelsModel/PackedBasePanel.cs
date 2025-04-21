@@ -1,4 +1,4 @@
-﻿namespace LIB.CutOptimizer.Model
+﻿namespace LIB.PanelsModel
 {
   public class PackedBasePanel : Panel
   {
