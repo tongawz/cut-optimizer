@@ -28,7 +28,7 @@ public class MaxRectsSolver
     {
       var combinations = GetPanelCombinations(remainPanels); // ordenadas por área descendente
       var totalPanelCombinations = combinations.Count;
-      List<PositionedPanel> bestResult = null;
+      List<PositionedPanel>? bestResult = null;
       int bestArea = 0;
 
       int falseCount = 0;
@@ -83,7 +83,7 @@ public class MaxRectsSolver
 
               Console.WriteLine($"✔ Analizando [{mid}/{combinations.Count}] -> Total area: {totalArea}, Pack: true");
 
-              // 🔁 Eliminar combinaciones con área menor o igual a la actual
+              // Se eliminan combinaciones con área menor o igual a la actual
               combinations = combinations
                 .Where(c => CalculateArea(c) > bestArea)
                 .ToList();
@@ -180,6 +180,8 @@ public class MaxRectsSolver
             };
           }).ToArray();
 
+          area = packingRects.Sum(r => (int)(r.Width * r.Height));
+          
           RectanglePacker.Pack(
               rectangles: packingRects,
               out PackingRectangle bounds,
@@ -188,7 +190,6 @@ public class MaxRectsSolver
               maxBoundsHeight: (uint)_basePanelHeight
           );
 
-          area = packingRects.Sum(r => (int)(r.Width * r.Height));
 
           var positioned = packingRects.Select(x => new PositionedPanel
           {
@@ -223,7 +224,7 @@ public class MaxRectsSolver
         bestResult = (bestArea, newBestResult.positioned);
       }
 
-      if (bestArea == 0) break;
+      if (bestArea == 0 || newBestResult.area == 0) break;
 
       // Poda
       combinations = combinations
