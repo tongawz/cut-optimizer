@@ -11,14 +11,14 @@ namespace LIB.PanelDrawer
     public static void DrawPackedPanel(
         PackedBasePanel packedPanel,
         string outputPath,
-        int dpi = 400,
-        int marginTop = 80,     // margen aumentado arriba
-        int marginLeft = 80,    // margen aumentado a la izquierda
+        int dpi = 1000,
+        int marginTop = 35,     // margen aumentado arriba para que entren las cotas
+        int marginLeft = 35,    // margen aumentado arriba para que entren las cotas
         int marginRight = 20,
         int marginBottom = 20,
-        float scale = 2.0f,
-        float panelFontSize = 5f,
-        float tableFontSize = 4f)
+        float scale = 5f,
+        float panelFontSize = 7f,
+        float tableFontSize = 6.5f)
     {
       var panelWidthPx = (int)(packedPanel.Width * scale);
       var panelHeightPx = (int)(packedPanel.Height * scale);
@@ -153,14 +153,15 @@ namespace LIB.PanelDrawer
       // Panel base
       g.DrawRectangle(basePanelPen, marginLeft, marginTop, panelWidthPx, panelHeightPx);
 
-      // Cotas externas del panel base
+      // Cotas externas del panel base (horizontal)
       DrawBasePanelDimensions(g, tableFont, brush, borderPen,
-          new Point(marginLeft, marginTop - 6),    // Separación ajustada
+          new Point(marginLeft, marginTop - 6),
           new Point(marginLeft + panelWidthPx, marginTop - 6),
           $"{packedPanel.Width}cm");
 
+      // Cotas externas del panel base (vertical)
       DrawBasePanelDimensions(g, tableFont, brush, borderPen,
-          new Point(marginLeft - 6, marginTop),    // Separación ajustada
+          new Point(marginLeft - 6, marginTop), 
           new Point(marginLeft - 6, marginTop + panelHeightPx),
           $"{packedPanel.Height}cm", isVertical: true);
     }
@@ -198,14 +199,13 @@ namespace LIB.PanelDrawer
         float centerX = start.X;
         float centerY = (start.Y + end.Y) / 2;
 
-        // Guardar estado gráfico actual
         GraphicsState state = g.Save();
 
-        // Trasladar al centro y rotar -90°
+        // Se traslada al centro y se rota -90°
         g.TranslateTransform(centerX, centerY);
         g.RotateTransform(-90);
 
-        // Posicionar texto (centrado)
+        // Se posiciona texto (centrado)
         float textX = -textSize.Width / 2;
         float textY = -textSize.Height / 2;
 
@@ -220,7 +220,6 @@ namespace LIB.PanelDrawer
         g.FillRectangle(Brushes.White, backgroundRect);
         g.DrawString(text, font, brush, textX, textY);
 
-        // Restaurar estado gráfico
         g.Restore(state);
       }
       else
@@ -258,7 +257,6 @@ namespace LIB.PanelDrawer
 
       if (isVertical)
       {
-        // Separar línea 1px a la derecha
         start = new Point(start.X + 3, start.Y + 1);
         end = new Point(end.X + 3, end.Y);
 
